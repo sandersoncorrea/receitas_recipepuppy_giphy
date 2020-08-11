@@ -1,11 +1,11 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 import ReceitasController from "../controllers/ReceitasController";
 
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "Receitas" });
 });
-router.get("/receitas", ReceitasController.index);
+router.get("/recipes/:i", ReceitasController.index);
 
 module.exports = router;

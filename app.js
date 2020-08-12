@@ -9,6 +9,7 @@ var usersRouter = require('./src/routes/users')
 var apiRouter = require('./src/routes/api')
 
 var app = express()
+require('dotenv').config()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))

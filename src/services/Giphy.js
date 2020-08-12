@@ -1,10 +1,9 @@
 import axios from 'axios'
-const url = 'http://api.giphy.com/v1/gifs/search'
 
 async function getGif(ingredientes) {
-    const response = await axios.get(url, {
+    const response = await axios.get(process.env.GIPHY_URL, {
         params: {
-            api_key: '40ckHP8VHzKQKG6wCeLbWdMvvXjNq8fd',
+            api_key: process.env.GIPHY_KEY,
             q: ingredientes,
             limit: 10,
             language: 'pt',

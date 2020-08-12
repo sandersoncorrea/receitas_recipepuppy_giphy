@@ -1,8 +1,7 @@
 import axios from 'axios'
-const url = 'http://www.recipepuppy.com/api'
 
 async function getReceitas(ingredientes) {
-    const response = await axios.get(url, {
+    const response = await axios.get(process.env.RECIPEPUPPY_URL, {
         params: {
             i: ingredientes,
             p: 3,

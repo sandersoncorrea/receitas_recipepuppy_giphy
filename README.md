@@ -21,7 +21,7 @@ Em seguida dê o comando para iniciar a aplicação
 
 O projeto está rodando na porta `3000`, então quando for testar a API, utilize a URL `localhost:300`
 
-Para acessa a função principal de pesquisar receitas, faça um `GET` como no exemplo abaixo:
+O projeto consiste em retornar uma lista de 10 receitas de acordo com o parâmetro informado. Para acessar a função principal de pesquisar receitas, faça um `GET` como no exemplo abaixo:
 `http://localhost:3000/recipes/bacon`
 Neste exemplo, a API retornará receitas que contém o termo "bacon" e retorno será algo como:
 
@@ -45,7 +45,9 @@ Neste exemplo, a API retornará receitas que contém o termo "bacon" e retorno s
 }
 ```
 
-Onde teremos o campo `keywords` que são as palavras colocadas no parâmetro e o campo `recipes` que é a lista de receitas. O objeto contido nesse array tem os campos `title`, `ingredients` e `link` que vêm da `RecipePuppy` e o campo gif vem da `Giphy`.
+Você pode informar mais de um parâmetro separado por vírgula: `http://localhost:3000/recipes/bacon,eggs`
+
+No retorno teremos o campo `keywords` que são as palavras colocadas no parâmetro e o campo `recipes` que é a lista de receitas. O objeto contido nesse array tem os campos `title`, `ingredients` e `link` que vêm da `RecipePuppy` e o campo gif vem da `Giphy`.
 
 ## Testes
 
@@ -66,6 +68,11 @@ Axios, dotenv, docker e jest
 Nodemon, sucrase, eslint, prettier e esm
 
 ## Projeto no Docker
+
+Para rodar o projeto diretamente do Docker use o comando
+`docker run --name receitas -p 3000:3000 -d sandersoncorrea/receitasendpoint`
+
+## Obrigado
 
 <h1 align="center">
   <img width="275" alt="Receitas EndPoint" src="https://media1.giphy.com/media/ftYpuYGoeQxpfnIJbd/giphy.gif?cid=ecf05e47bkvyx2p0pepv7w7m37zz4qpvdl80bksjf3czp548&rid=giphy.gif">
